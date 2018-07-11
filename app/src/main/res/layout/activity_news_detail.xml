@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/icons"
+        android:fitsSystemWindows="true"
+        >
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                >
+                <ImageView
+                    android:id="@+id/iv_more_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more_vert_black_20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="15dp"
+                    />
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_chevron_left_black_20dp"
+                    />
+                <TextView
+                    android:id="@+id/tv_list_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MIUI general"
+                    android:layout_toEndOf="@id/iv_back"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="8dp"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+        <ImageView
+            android:id="@+id/iv_user_photo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/username"
+            />
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jssharma"
+            android:layout_toEndOf="@id/iv_user_photo"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/primary_text"
+            />
+        <TextView
+            android:id="@+id/tv_user_brief"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Super moderator"
+            android:layout_toEndOf="@id/tv_user_name"
+            android:padding="5dp"
+            android:background="@color/primary"
+            android:textColor="@color/icons"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/tv_date_format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1# Jul 1,2018   from PC"
+            android:layout_below="@id/tv_user_name"
+            android:layout_alignLeft="@id/tv_user_name"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/tv_new_title"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date_format"
+            android:text="[Tech Talk Vol. 23] How Much Storage Is Really Needed in A Smartphone?"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginTop="25dp"
+            android:textSize="20sp"
+            />
+        <FrameLayout
+            android:id="@+id/comment_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_new_title"
+            android:layout_marginTop="20dp"
+            >
+            <include layout="@layout/view_holder_comment"/>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_news_detail"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/news"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/comment_bar"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/tv_news_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dear MIUI ers and Mi fans,"
+            android:layout_below="@id/iv_news_detail"
+            android:textColor="@color/primary_text"
+            android:lineSpacingMultiplier="1.2"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
