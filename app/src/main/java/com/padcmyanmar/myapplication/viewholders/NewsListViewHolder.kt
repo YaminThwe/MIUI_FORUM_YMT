@@ -15,6 +15,8 @@ class NewsListViewHolder(itemView: View , private val healthDelegate : NewsDeleg
 
         itemView.tv_new_title_list!!.text = data.title
 
+        itemView.tv_name!!.text=data.author!!.authorName
+
         if(data.image!=null){
             Glide.with(itemView.context)
                     .load(data.image!!)

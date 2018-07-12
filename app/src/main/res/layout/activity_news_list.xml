@@ -1,109 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:fitsSystemWindows="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="?attr/actionBarSize"
             android:fitsSystemWindows="true">
+
             <android.support.design.widget.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:contentScrim="@color/primary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
-                <RelativeLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginBottom="10dp"
                     android:gravity="center_vertical">
+
                     <ImageView
                         android:id="@+id/iv_person"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        tools:src="@drawable/ic_person_outline_white_20dp" />
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_person_outline_white_20dp" />
+
                     <TextView
                         android:id="@+id/tv_featured"
                         style="@style/TextinTextBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        tools:text="Featured" />
+                        android:layout_marginLeft="30dp"
+                        android:text="Featured"
+                        android:textColor="@color/icons" />
+
                     <TextView
                         android:id="@+id/tv_forum"
                         style="@style/TextinTextBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="150dp"
-                        tools:text="Forum" />
+                        android:layout_marginLeft="30dp"
+                        android:text="Forum"
+                        android:textColor="@color/icons" />
+
                     <TextView
                         android:id="@+id/tv_feedback"
                         style="@style/TextinTextBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="230dp"
-                        tools:text="FeedBack" />
+                        android:layout_marginLeft="30dp"
+                        android:text="FeedBack"
+                        android:textColor="@color/icons" />
+
                     <ImageView
                         android:id="@+id/iv_event_calendar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="340dp"
-                        tools:src="@drawable/ic_event_available_white_24dp" />
-                </RelativeLayout>
+                        android:layout_marginLeft="30dp"
+
+                        android:src="@drawable/ic_event_available_white_24dp" />
+                </LinearLayout>
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <android.support.v4.widget.SwipeRefreshLayout
-                android:id="@+id/swipeRefreshLayout"
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                >
-                <android.support.v4.widget.NestedScrollView
+                android:layout_height="match_parent">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <include
+                        android:id="@+id/view"
+                        layout="@layout/content_news_list" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rvHealthCare"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp" />
 
-                        <include
-                            android:id="@+id/view"
-                            layout="@layout/content_news_list"
-                            />
+                </LinearLayout>
 
 
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/rvHealthCare"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="30dp" />
-
-                        <include
-                            android:id="@+id/vp_empty"
-                            layout="@layout/view_pod_empty"
-                            android:visibility="gone"
-                            />
-
-                    </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
 
 
-                </android.support.v4.widget.NestedScrollView>
-
-
-
-            </android.support.v4.widget.SwipeRefreshLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
     </android.support.design.widget.CoordinatorLayout>
+
+    <include
+        android:id="@+id/vp_empty"
+        layout="@layout/view_pod_empty"
+        android:visibility="gone" />
+
+
+</FrameLayout>
+
+
 
 
 
