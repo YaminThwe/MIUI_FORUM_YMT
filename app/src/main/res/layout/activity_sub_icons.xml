@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4"
+    android:layout_marginTop="15dp"
+    >
+  <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1">
+      <ImageView
+          android:id="@+id/iv_subforums"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/ic_check_box_outline_blank_black_24dp"
+          android:layout_centerHorizontal="true"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Subforums"
+          android:layout_below="@id/iv_subforums"
+          android:layout_centerInParent="true"
+          />
+  </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/iv_general"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_box_black_24dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General"
+            android:layout_below="@id/iv_general"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/miui_below"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_library_books_black_30dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MIUI 10"
+            android:layout_below="@id/miui_below"
+            android:layout_centerInParent="true"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/tv_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_border_black_30dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Themes"
+            android:layout_below="@id/tv_theme"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
+
